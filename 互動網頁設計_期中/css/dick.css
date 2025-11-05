@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 body {
-  background: url("/互動網頁設計_期中/image/BG1.jpg") no-repeat center top;
+  background: url("/Mid_exam_Web114/互動網頁設計_期中/image/BG1.jpg") no-repeat center top;
   background-size: cover;
   color: white;
   font-family: "Noto Sans TC", sans-serif;
@@ -176,4 +176,5 @@ footer {
   color: #ccc;
   font-size: 14px;
   background: rgba(0, 0, 0, 0.4);
+
 }
