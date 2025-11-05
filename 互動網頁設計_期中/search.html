@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何搜尋包皮</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav class="Navigation">
+
+        <ul class="menu">
+
+            <li><a href="#">展廳</a></li>
+            <li><a href="#">團隊介紹</a></li>
+            <li><a href="#">聯絡我們</a></li>
+            <li><a href="#">產品</a></li>
+            <li><a href="#">更多資源</a></li>
+
+        </ul>
+
+    </nav>
+    
+    <div class="top_area">
+
+        <p id ="top_Text">展廳</p>
+
+    </div>
+
+    <div class="mid_area">
+        <div class="filters">
+
+            <form id = "galleryControls">
+
+                <div class="row_searchbar">
+
+                    <input id="searchInput" type="search" name = "q" placeholder="搜索作品、作者..."/>
+                    <button type="submit" class="icon-btn" aria-label="搜尋">搜尋</button>
+
+                </div>
+
+            </form>
+
+        </div>
+        <div class="type_area">
+            <div class="row">
+
+                <span class="label">類別:</span>
+                <div >
+
+                    <input type="checkbox" id = "Works_3D"  value="Works_3D"><label class="chip" for="Works_3D">3D</label>
+                    <input type="checkbox" id = "graphic"  value="graphic"><label class="chip" for="graphic">電繪</label>
+                    <input type="checkbox" id = "motion"  value="motion"><label class="chip" for="motion">動畫</label>
+
+                </div>
+
+                <div class="spacer"></div>
+
+                <span class="label">排序方式：</span>
+                <div role="group" aria-label="排序方式">
+
+                    <input type="radio" name="sort" id="sort-new" checked>
+                    <label class="chip" for="sort-new">最新</label>
+                    <input type="radio" name="sort" id="sort-hot">
+                    <label class="chip" for="sort-hot">熱門</label>
+
+                </div>
+
+            </div>
+            
+            <div class="row">
+                <span class="label">作者：</span>
+                <div>
+                    <input type="checkbox" id="au-a"><label class="chip" for="au-a">高</label>
+                    <input type="checkbox" id="au-b"><label class="chip" for="au-b">秦</label>
+                    <input type="checkbox" id="au-c"><label class="chip" for="au-c">孫</label>
+                    <input type="checkbox" id="au-d"><label class="chip" for="au-d">唐</label>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="show_Works_area">
+
+        <div class="gallery">
+        <a class="card" data-type="Works_3D" data-author="高" data-popularity="8"  data-date="2025-07-10">
+            <div class="thumb"><img src="./image/3D建模1.jpg" alt="作品1"></div>
+            <div class="caption">Armand</div>
+            <div class="caption">al.高</div>
+        </a>
+
+        <a class="card"  data-type="Works_3D" data-author="高" data-popularity="20"  data-date="2025-06-28">
+            <div class="thumb"><img src="./image/3D建模2.jpg" alt="作品2"></div>
+            <div class="caption">Baldwin</div>
+            <div class="caption">al.高</div>
+        </a>
+
+        <a class="card"  data-type="Works_3D" data-author="秦" data-popularity="30"  data-date="2025-03-15">
+            <div class="thumb"><img src="./image/3D建模3.jpg" alt="作品3"></div>
+            <div class="caption">Abbott</div>
+            <div class="caption">al.秦</div>
+        </a>
+
+        <a class="card"  data-type="graphic" data-author="秦" data-popularity="56"  data-date="2025-01-11">
+            <div class="thumb"><img src="./image/電繪1.jpg" alt="作品4"></div>
+            <div class="caption">Aaron</div>
+            <div class="caption">al.秦</div>
+        </a>
+        <a class="card" data-type="graphic" data-author="孫" data-popularity="93"  data-date="2025-07-20">
+            <div class="thumb"><img src="./image/電繪2.jpg" alt="作品5"></div>
+            <div class="caption">Beck</div>
+            <div class="caption">al.孫</div>
+        </a>
+
+        <a class="card"  data-type="graphic" data-author="孫" data-popularity="45"  data-date="2025-06-10">
+            <div class="thumb"><img src="./image/電繪3.jpg" alt="作品6"></div>
+            <div class="caption">Benedict</div>
+            <div class="caption">al.孫</div>
+        </a>
+
+        <a class="card" data-type="motion" data-author="唐" data-popularity="81"  data-date="2025-01-30">
+            <div class="thumb"><video src="./image/videoplayback.mp4" controls autoplay muted loop></video></div>
+            <div class="caption">Beau</div>
+            <div class="caption">al.唐</div>
+        </a>
+
+        <a class="card"  data-type="motion" data-author="唐" data-popularity="28"  data-date="2025-02-10">
+            <div class="thumb"><video src="./image/videoplayback (1).mp4" controls autoplay muted loop></video></div>
+            <div class="caption">Benson</div>
+            <div class="caption">al.唐</div>
+        </a>
+
+    
+        </div>
+
+    </div>
+
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const typeFilters = document.querySelectorAll('input#Works_3D, input#graphic, input#motion');
+        const authorFilters = document.querySelectorAll('#au-a, #au-b, #au-c, #au-d');
+        const sortNew = document.getElementById('sort-new');
+        const sortHot = document.getElementById('sort-hot');
+        const gallery = document.querySelector('.gallery');
+        const searchInput  = document.getElementById('searchInput');
+        const searchForm   = document.getElementById('galleryControls');
+
+        /*
+        JS筆記:
+        
+        querySelectorAll抓所有相關class的元素
+        querySelector抓第一個相關class的元素
+        getElementById抓取相關id元素
+
+        
+        */
+
+        const norm = s => (s || '').trim().toLowerCase();
+
+        function applyFilters() {
+            const selectedTypes = Array.from(typeFilters)
+                .filter(i => i.checked)
+                .map(i => i.value);
+
+            const selectedAuthors = Array.from(authorFilters)
+                .filter(i => i.checked)
+                .map(i => i.labels[0].textContent.trim());
+
+            const kw = norm(searchInput?.value);
+
+            
+
+            cards.forEach(card => {
+                const matchType = card.dataset.type;
+                const matchAuthor = card.dataset.author;
+
+                const byType   = !selectedTypes.length   || selectedTypes.includes(matchType);
+                const byAuthor = !selectedAuthors.length || selectedAuthors.includes(matchAuthor);
+                const caption = norm(card.querySelector('.caption')?.textContent);
+            
+                const byKeyword = !kw || [caption, norm(matchAuthor), norm(matchType)].some(v => v === kw);
+
+                
+                card.style.display = (byType && byAuthor && byKeyword) ? 'flex' : 'none';
+            });
+        }
+
+        /*
+        JS筆記:
+        
+        .filter過濾並抓取被checked(打勾過)的元素
+        .map製作新的陣列
+        textContent.trim()抓取每個 checkbox 對應的 label 文字
+        includes()判斷內部回傳值是否有
+        dataset.xxx會抓取字頭有data-的資料值，dataset.type=data-type
+
+        
+        */
+
+        function applySorting() {
+            const sortedCards = Array.from(cards);
+            if (sortHot.checked) {
+                sortedCards.sort((a, b) => b.dataset.popularity - a.dataset.popularity);
+            } else{
+                sortedCards.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+            }
+            sortedCards.forEach(c => gallery.appendChild(c)); // 將sortedCards剛剛排好的資料帶回到gallery
+        }
+
+        /*
+        JS筆記:
+        
+        sortedCards.sort((a, b) => b.dataset.popularity - a.dataset.popularity);(比較前後兩個值誰的熱門度高，b-a回傳正值就會讓b直排前面，反之則a排前面)
+        Date()時間計量
+        
+        */
+
+        searchForm.addEventListener('submit', e =>{
+
+            e.preventDefault();
+            applyFilters();
+            applySorting();
+
+        })
+
+        searchInput.addEventListener('input', () =>{
+
+            applyFilters();
+            applySorting();
+
+        })
+
+        document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(cb => {
+            cb.addEventListener('change', () => {
+                applyFilters();
+                applySorting();
+            });
+        });/*監聽目前checkbox的變化當有變化時啟動上面兩段的副程式*/
+
+        applyFilters();
+        applySorting();
+    </script>
+</body>
+</html>

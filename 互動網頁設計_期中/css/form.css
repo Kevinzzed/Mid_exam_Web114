@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;       
+  font-family: "微軟正黑體", sans-serif;
+  color: #222222;                  
+}
+
+.wrapper {
+  width: 900px;
+  margin: 60px auto;
+  padding: 40px 80px 60px;
+  background-color: #ffffff;        
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  display: inline-block;
+  padding: 10px 40px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  color: #000000;                  
+  border-radius: 4px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 120px;
+  row-gap: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 18px;
+  color: #000000;                   
+}
+
+.field input {
+  border: none;              
+  background-color: transparent; 
+  font-size: 16px;
+  color: #000000;
+  outline: none;              
+  width: 260px;               
+  transition: none;
+}
+
+
+.field input::placeholder {
+  color: #999999;
+}
+
+.field input:focus {
+  border-bottom-color: #000000;
+}
+
+
+.section-bottom {
+  margin-top: 60px;
+}
+
+
+.commission-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 18px;
+  color: #000000;
+  margin-right: 20px;
+}
+
+
+.commission-tags {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+
+.tag-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+
+.tag {
+  width: 260px;
+  height: 60px;
+  border-radius: 18px;
+  background-color: #bfbfbf;      
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.submit-area {
+  margin-top: 40px;
+  text-align: right;
+}
+
+
+.submit-btn {
+  background-color: #bfbfbf;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.submit-btn:hover {
+ transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+

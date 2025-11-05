@@ -1,0 +1,93 @@
+/* ===== 論文頁專屬樣式 ===== */
+
+.paper_area {
+    /* 預留導覽列空白 */
+    margin: 48px auto 48px;
+    max-width: 1400px;
+    padding: 0 5px;
+    line-height: 1.95;
+    color: #222;
+    background: #fff;
+  }
+  
+  .paper_area .paper_body {
+    background: #fff;
+  }
+  
+  /* ===== 文字樣式 ===== */
+  .paper_title {
+    font-family: "Times New Roman", "Noto Serif TC", PMingLiU, serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0 0 18px 0;
+  }
+  
+  .paper_subtitle {
+    font-family: "Times New Roman", "Noto Serif TC", PMingLiU, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #333;
+    margin: 0 0 28px 0;
+  }
+  
+  .paper_meta {
+    font-size: 14px;
+    color: #444;
+    margin: 4px 0;
+  }
+  
+  .paper_meta strong {
+    font-weight: 600;
+  }
+  
+  .paper_hr {
+    height: 1px;
+    background: #e6e6e6;
+    margin: 28px 0 34px;
+    border: 0;
+  }
+  
+  /* ===== 章節 ===== */
+  .sec_title {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 32px 0 14px;
+  }
+  
+  .para {
+    font-size: 16px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    margin: 12px 0;
+  }
+  
+  /* 引文區塊 */
+  .quote_block {
+    border-left: 3px solid #bbb;
+    padding: 10px 14px;
+    margin: 16px 0;
+    color: #333;
+    background: #fafafa;
+    font-size: 15px;
+  }
+  
+  /* 上方預留導覽列空白 */
+  .nav_space {
+    height: 56px;
+  }
+  
+  /* 手機版調整 */
+  @media (max-width: 600px) {
+    .paper_area {
+      padding: 0 18px;
+      margin: 80px auto 80px;
+    }
+    .paper_title {
+      font-size: 28px;
+    }
+    .paper_subtitle {
+      font-size: 18px;
+    }
+  }
+  

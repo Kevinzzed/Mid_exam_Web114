@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background-color: #aba89c;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Arial", sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  
+}
+
+/* 背景圖片動畫 */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  animation: slideLeft 40s linear infinite;
+  opacity: 0.8;
+  margin-top: 7%;
+  margin-bottom: 30%;
+}
+
+#background_img{ 
+
+  height: 70%;
+  opacity: 0.5;
+
+}
+
+#bg1{ 
+
+  height: 70%;
+  opacity: 0.5;
+
+}
+
+
+#bg2{ 
+
+  height: 70%;
+  opacity: 0.5;
+
+}
+.bg-track {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: slideLeft 40s linear infinite;
+}
+@keyframes slideLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.33%); }
+}
+
+/* 中央內容 */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: #3b3225;
+  z-index: 10;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.start {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* 滑鼠懸停效果 */
+.title:hover,
+.start:hover {
+  color: #2b1f10;
+  transform: scale(1.05);
+}
+
+/* 淡入動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 點擊淡出過場 */
+.fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #a3a092;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  z-index: 20;
+}
+
+.fade-overlay.fade-out {
+  opacity: 1;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEPTUNE</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="content">
+    <h1 class="title">NEPTUNE</h1>
+    <p class="start">CLICK TO START</p>
+  </div>
+
+  <div class="fade-overlay"></div>
+  <div class="background">
+    <img src="./image/imagesbackground.png.jpg" id="background_img">
+    <img src="./image/bg1.png" id="bg1">
+    <img src="./image/bg2.png" id="bg2">
+    </div>
+
+  <script>
+    // 淡出動畫
+    document.body.addEventListener("click", () => {
+      const overlay = document.querySelector(".fade-overlay");
+      overlay.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "next.html"; // 可以改頁面
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
+

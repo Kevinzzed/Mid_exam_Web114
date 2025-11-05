@@ -1,0 +1,179 @@
+.Navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 48px;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(23, 38, 92, 1) 0%, rgba(23, 38, 92, 0) 100%);
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+nav .menu{
+
+  list-style: none;
+  display: flex;
+  gap: 200px;
+
+}
+
+nav a {
+  text-decoration: none;
+  color: #aaa;
+}
+nav a:hover {
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("/互動網頁設計_期中/image/BG1.jpg") no-repeat center top;
+  background-size: cover;
+  color: white;
+  font-family: "Noto Sans TC", sans-serif;
+  overflow-x: hidden;
+}
+
+/* 導覽列區塊預留 */
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+header .logo {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* 主體內容 */
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+/* 整個人物介紹區（頭像 + 名字 + 成就自介） */
+.profile-section {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 整體置中 */
+  margin-top: 80px;
+}
+
+/* 成就與自介塊 */
+.info-list {
+  width: 70%;
+  margin-top: 60px; /* 與上方BLACK的距離 */
+  line-height: 2;
+  font-size: 18px;
+  text-align: left;
+}
+
+
+.gallery {
+  width: 90%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 120px;
+}
+
+
+
+
+
+
+
+/* 讓頭像和文字橫向排列 */
+.profile-header {
+  display: flex;
+  align-items: center; /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+  gap: 30px;
+  width: 100%;
+  padding: 300px 500px;
+}
+
+/* 頭像樣式 */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-list ul {
+  list-style: disc;
+}
+
+.info-list li {
+  margin-bottom: 12px;
+}
+
+/* 標題 */
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* 頁尾 */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  color: #ccc;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.4);
+}
