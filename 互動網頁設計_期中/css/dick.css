@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 body {
-  background: url("/image/BG1.jpg") no-repeat center top;
+  background: url("../image/BG1.jpg") no-repeat center top;
   background-size: cover;
   color: white;
   font-family: "Noto Sans TC", sans-serif;
