@@ -53,25 +53,32 @@
       </div>
     </div>
 
-    <!-- 下半部委託內容 + 方塊 -->
     <div class="section-bottom">
-      <div class="commission-row">
-        <div class="label">委託內容：</div>
+    <fieldset class="commission-group">
+      <legend class="label">委託內容：</legend>
 
-        <!-- 上排兩顆 -->
-        <div class="commission-tags">
-          <div class="tag"></div>
-          <div class="tag"></div>
-        </div>
-      </div>
-
-      <!-- 下排三顆 -->
+      
       <div class="tag-row">
-        <div class="tag"></div>
-        <div class="tag"></div>
-        <div class="tag"></div>
+        <input class="radio" type="radio" name="commission" id="c-anim" value="動畫製作">
+        <label class="tag" for="c-anim"><div class="dot"></div><span>動畫製作</span></label>
+
+        <input class="radio" type="radio" name="commission" id="c-graphic" value="平面設計">
+        <label class="tag" for="c-graphic"><div class="dot"></div><span>平面設計</span></label>
       </div>
-    </div>
+
+      
+      <div class="tag-row">
+        <input class="radio" type="radio" name="commission" id="c-3d" value="3D建模">
+        <label class="tag" for="c-3d"><div class="dot"></div><span>3D建模</span></label>
+
+        <input class="radio" type="radio" name="commission" id="c-interior" value="室內設計">
+        <label class="tag" for="c-interior"><div class="dot"></div><span>室內設計</span></label>
+
+        <input class="radio" type="radio" name="commission" id="c-logo" value="logo製作">
+        <label class="tag" for="c-logo"><div class="dot"></div><span>logo製作</span></label>
+      </div>
+    </fieldset>
+  </div>
 
     <!-- 送出按鈕 -->
     <div class="submit-area">

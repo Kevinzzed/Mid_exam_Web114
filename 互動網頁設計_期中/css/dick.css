@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 body {
-  background: url("/Mid_exam_Web114/互動網頁設計_期中/image/BG1.jpg") no-repeat center top;
+  background: url("/image/BG1.jpg") no-repeat center top;
   background-size: cover;
   color: white;
   font-family: "Noto Sans TC", sans-serif;
@@ -73,7 +73,65 @@ header .logo {
 
 
 
+.profile-scroll{
 
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  padding: 40px 0;
+  cursor: grab;
+  scroll-padding-left: 100px;
+  scroll-padding-right: 100px;
+  -ms-overflow-style: none;
+  touch-action: pan-y;
+
+}
+
+.profile-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 80px;
+  padding: 0 50px;
+  flex-wrap: nowrap;  
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.95;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.profile-photo img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  border: 4px solid white;
+  flex-shrink: 0;
+}
+
+
+.profile-list::after {
+  content: "";
+  flex: 0 0 0px;  /* 依你的頭像大小/淡出寬度調整，例如 200～320px */
+}
+
+.edge-pad { flex: 0 0 var(--edge, 300px); }
 
 
 
@@ -86,6 +144,27 @@ header .logo {
   flex-direction: column;
   align-items: center; /* 整體置中 */
   margin-top: 80px;
+}
+
+.bottom_profile-photo{
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.bottom_profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 讓圖片等比例填滿 */
+  display: block;
 }
 
 /* 成就與自介塊 */
@@ -120,24 +199,10 @@ header .logo {
   justify-content: center; /* 水平置中 */
   gap: 30px;
   width: 100%;
-  padding: 300px 500px;
+  padding: 100px 300px;
 }
 
 /* 頭像樣式 */
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid white;
-  flex-shrink: 0;
-}
-
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .info-list ul {
   list-style: disc;
@@ -176,5 +241,4 @@ footer {
   color: #ccc;
   font-size: 14px;
   background: rgba(0, 0, 0, 0.4);
-
 }

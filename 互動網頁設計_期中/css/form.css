@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;       
+  background: linear-gradient(to top, #ffffff, #676767);       
   font-family: "微軟正黑體", sans-serif;
   color: #222222;                  
 }
@@ -10,7 +10,7 @@ body {
   width: 900px;
   margin: 60px auto;
   padding: 40px 80px 60px;
-  background-color: #ffffff;        
+  
   animation: fadeIn 0.8s ease;
 }
 
@@ -26,7 +26,8 @@ body {
 }
 
 .title {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 10px 40px;
   margin-bottom: 40px;
   font-size: 36px;
@@ -51,22 +52,27 @@ body {
 
 .field label {
   font-size: 18px;
-  color: #000000;                   
+  color: #ffce5d;                   
 }
 
 .field input {
-  border: none;              
-  background-color: transparent; 
+  border-radius: 40px;
+  text-align: center; 
+  height: 50px;             
+  background-color: rgb(255, 255, 255); 
   font-size: 16px;
   color: #000000;
   outline: none;              
-  width: 260px;               
+  width: 350px;               
   transition: none;
 }
 
 
 .field input::placeholder {
-  color: #999999;
+  text-align: center; 
+  
+  color: #383838;
+  opacity: 0.3;
 }
 
 .field input:focus {
@@ -92,31 +98,92 @@ body {
 }
 
 
-.commission-tags {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
+.tag-row input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+/* 基礎外觀在 label.tag 上 */
+.tag-row label.tag{
+  position: relative;
+  display: inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 260px;
+  height: 60px;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #1f1f1f;
+  font-weight: 700;              /* 原本寫成 30px 是無效的 */
+  letter-spacing: .5px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .16s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  border: 2px solid transparent;
+}
+
+.tag-row label.tag:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+}
+
+/* 左側小圓點 */
+.tag-row label.tag .dot{
+  position: absolute;
+  left: 20px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background:#6d6d6d;
+}
+.tag-row label.tag .dot::before{
+  content:"";
+  position:absolute; inset:0;
+  margin:auto;
+  width:10px; height:10px;
+  border-radius:50%;
+  background:#ffffff;
+  transform: scale(0);
+  opacity:0;
+  transition: transform .2s ease, opacity .2s ease;
 }
 
 
-.tag-row {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
+.tag-row input[type="radio"]:checked + label.tag{
+  background: #ffb300;
+  color:#fff;
+  border-color: rgb(0, 0, 0);
 }
+
+.tag-row input[type="radio"]:checked + label.tag .dot::before{
+  transform: scale(1);
+  opacity:1;
+}
+
+
 
 
 .tag {
   width: 260px;
   height: 60px;
   border-radius: 18px;
-  background-color: #bfbfbf;      
-}
-
-.tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  color: #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: .5px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  transition:
+    transform .16s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    color .25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 
@@ -125,6 +192,13 @@ body {
   text-align: right;
 }
 
+#work_name{
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
 
 .submit-btn {
   background-color: #bfbfbf;
@@ -148,13 +222,14 @@ body {
 .Navigation{
 
   position: absolute;
+  top:0;
   height: 48px;
   width: 100%;
   z-index: 100;
   background: linear-gradient(to bottom, #6b6b6b, #2b2b2b);
   color: #ddd;
   display: flex;
-  align-items: center;
+  
   justify-content: center;
   padding: 0 20px;
 
